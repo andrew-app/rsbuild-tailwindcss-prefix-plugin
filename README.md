@@ -4,7 +4,7 @@ An Rsbuild plugin that automatically prefixes Tailwind CSS classes at build time
 
 ## Overview
 
-Adds prefix to all Tailwind classes in your JSX/TSX files during the build process. This eliminates the need to manually prepend each utility class with your prefered prefix and instead handle it at build time. This is useful when building microfrontends with module federation and want to use tailwind.
+Adds prefix to all Tailwind classes in your JSX/TSX files during the build process. This eliminates the need to manually prepend each utility class with your prefered prefix and instead handle it at build time. This is useful when building microfrontends with module federation and want to use Tailwind for styling.
 
 ## How It Works
 
@@ -72,21 +72,3 @@ These limitations are intentional to prevent breaking complex dynamic class patt
 1. **Better Performance**: No runtime overhead for prefixing classes
 2. **Cleaner Code**: Write standard Tailwind classes without wrapper functions
 3. **Better DX**: IDE autocomplete works normally with standard class names
-4. **Smaller Bundle**: No need to ship the prefix function to the browser
-
-## Migration from `tw()` Function
-
-If you previously used a `tw()` function to prefix classes:
-
-**Old approach:**
-```tsx
-import { tw } from "@/lib/utils";
-<div className={tw("flex items-center")} />
-```
-
-**New approach:**
-```tsx
-<div className="flex items-center" />
-```
-
-The plugin handles prefixing automatically at build time, so you can remove all `tw()` calls.
