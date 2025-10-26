@@ -1,4 +1,4 @@
-# Tailwind Prefix Plugin
+# Rsbuild TailwindCSS Prefix Plugin
 
 An Rsbuild plugin that automatically prefixes Tailwind CSS classes at build time.
 
@@ -35,11 +35,14 @@ The plugin transforms your code at build time:
 - ✅ Skips complex template literals with expressions
 
 ## Configuration
-
+Install the plugin:
+```shell
+npm i -D rsbuild-tailwindcss-prefix-plugin
+```
 The plugin is configured in `rsbuild.config.ts`:
 
 ```typescript
-import { pluginTailwindPrefix } from "./plugins/tailwind-prefix-plugin";
+import { pluginTailwindPrefix } from "rsbuild-tailwindcss-prefix-plugin";
 
 export default defineConfig({
   plugins: [
